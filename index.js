@@ -107,6 +107,7 @@
           
         
         }).fail(function() {
+          $('#login').css('display','block');
           alert('Неправильный пароль');
         });        
   });
