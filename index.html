@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+</head>
+<body>
+
+<body class="container">
+    <div class="content col-md-8 col-md-offset-2">
+        <h3>Выберите любое из мест в нашем квадратном кинотеатре</h3>
+        <div id="logout"><a href="#">logout</a></div>
+        <div class="squad"></div>
+    </div>
+</body>
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true" style="display: none;">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Бронирование мест</h1><br>
+				  
+					  <input type="text" name="username" placeholder="Username">
+					  <input type="password" name="password" placeholder="Password">
+					  <input type="submit" id="login" class="login loginmodal-submit" value="Вход">
+				  
+					
+				  <div class="login-help">
+					<p>Если у Вас нет аккаунта - он создастся автоматически</p>
+				  </div>
+				</div>
+			</div>
+  </div>
+
+
+  
+  <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+  <script src="index.js"></script>
+   
+</body>
+</html>
