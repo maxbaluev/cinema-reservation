@@ -29,8 +29,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-server.listen(8080, function () {
-  console.log('Подняли сервер на *:8080');
+server.listen(80, function () {
+  console.log('Подняли сервер на *:80');
 });
 
 
