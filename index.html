@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"> 
+  <meta charset="utf-8"> 
   <title></title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -10,14 +10,14 @@
 </head>
 <body>
 
-<body class="container">
-    <div class="content col-md-8 col-md-offset-2">
-        <h3>Выберите любое из мест в нашем квадратном кинотеатре</h3>
-        <div id="logout"><a href="#">logout</a></div>
-        <div id="github"><a href="https://github.com/maxbaluev/cinema-reservation">Исходники</a></div>
-        <div class="squad"></div>
-    </div>
-</body>
+<div class="container">
+  <div class="content col-md-8 col-md-offset-2">
+    <h3>Выберите любое из мест в нашем квадратном кинотеатре</h3>
+    <div id="logout"><a href="#">logout</a></div>
+    <div id="github"><a href="https://github.com/maxbaluev/cinema-reservation">Исходники</a></div>
+    <div class="squad"></div>
+  </div>
+</div>
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true" style="display: none;">
   <div class="modal-dialog">
@@ -29,7 +29,7 @@
         <input type="submit" id="login" class="login loginmodal-submit" value="Вход">
       </form>
       <div class="login-help">
-        <p>При логине происходит задержка несколько секунд из-за того, что приходится использовать не нативную реализацию хеширования пароля bscrypt(убираем кнопку сабмита на это время). Данный сайт работает по незащищенному протоколу, Ваши учетные данные могут перехватить. Нельзя использовать в продакшене. </p>
+        <p>При логине происходит задержка несколько секунд из-за того, что приходится использовать не нативную реализацию хеширования пароля bscrypt(убираем кнопку сабмита на это время). Данный сайт работает по незащищенному протоколу, Ваши учетные данные могут получить злоумышленники с помощью MiTM атаки.</p>
       </div> 
       <div class="login-help">
         <p>Если у Вас нет аккаунта - он создастся автоматически</p>
@@ -40,8 +40,8 @@
 
 
   
-  <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
-  <script src="index.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+<script src="index.js"></script>
    
 </body>
 </html>
