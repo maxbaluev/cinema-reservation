@@ -3,17 +3,23 @@
       $('#login-modal').modal('show');
       $('#login').prop('disabled', false);
       
-      //TODO переделать логин, чтобы кроме клика можно было зайти через ентер.  
+      //Логинимся.  
       $('#loginForm').on("submit", function(e) {
         e.preventDefault();
+        
+        //Не нативная реализация bscrypt очень долго хеширует пароль(несколько секунд), поэтому скрываем кнопку сабмита
+        $("#login").css('display','none');
+                
         var username = $('input[name=username]').val();
         var password = $('input[name=password]').val();
         if (!username) {
           alert('Вы не ввели логин');
+          $("#login").css('display','block');
           return;
         }
         if (!password) {
           alert('Вы не ввели пароль');
+          $("#login").css('display','block');
           return;
         }
         
@@ -76,6 +82,7 @@
                   socket.disconnect();
                   $('.content').css('display','none');
                   $('.squad').html('');
+                  $("#login").css('display','block');
                   $('#login-modal').modal('show');
               });
             });
