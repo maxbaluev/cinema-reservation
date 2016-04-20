@@ -2,8 +2,10 @@
       var socket,token;
       $('#login-modal').modal('show');
       $('#login').prop('disabled', false);
-        
-      $('#login').on("click", function(e) {
+      
+      //TODO переделать логин, чтобы кроме клика можно было зайти через ентер.  
+      $('#loginForm').on("submit", function(e) {
+        e.preventDefault();
         var username = $('input[name=username]').val();
         var password = $('input[name=password]').val();
         if (!username) {
