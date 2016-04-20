@@ -23,7 +23,7 @@
         //Отправляем запрос с телефоном на сервер, для получения токена
         $.ajax({
           type: 'POST',
-          url: 'http://localhost:8080/api/users',
+          url: '/api/users',
           data: user
         }).done(function (data) {
           token = data.token;
@@ -32,7 +32,7 @@
             return;
           }
           console.log(token);
-          socket = io.connect('http://localhost:8080', {
+          socket = io.connect('/', {
             query: 'token=' + token,
             forceNew: true
           })
