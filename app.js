@@ -10,7 +10,7 @@ var bcrypt = require('bcrypt-nodejs');
 
 //Создаем новую бд и коллекцию в памяти при каждом запуске ноды
 var loki = require('lokijs');
-var db = new loki("loki.db");
+var db = new loki('loki.db');
 var users = db.addCollection('users');
 
 //Заполняем базу пустыми данными(нужно для генерации мест на клиенте)
@@ -126,11 +126,11 @@ io.on('connection', function (socket) {
       }else if(seat.name === socket.decoded_token.username){
         //Снимаем бронь
         seat.name = false;    
-        seat.color = "#fff"; 
+        seat.color = '#fff'; 
         seats.update(seat);
         io.sockets.emit('seat taken',{
           pos: data.id,
-          color: "#fff",
+          color: '#fff',
           name: false
         });  
         return;

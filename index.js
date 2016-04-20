@@ -4,22 +4,22 @@
       $('#login').prop('disabled', false);
       
       //Логинимся.  
-      $('#loginForm').on("submit", function(e) {
+      $('#loginForm').on('submit', function(e) {
         e.preventDefault();
         
         //Не нативная реализация bscrypt очень долго хеширует пароль(несколько секунд), поэтому скрываем кнопку сабмита
-        $("#login").css('display','none');
+        $('#login').css('display','none');
                 
         var username = $('input[name=username]').val();
         var password = $('input[name=password]').val();
         if (!username) {
           alert('Вы не ввели логин');
-          $("#login").css('display','block');
+          $('#login').css('display','block');
           return;
         }
         if (!password) {
           alert('Вы не ввели пароль');
-          $("#login").css('display','block');
+          $('#login').css('display','block');
           return;
         }
         
@@ -53,9 +53,9 @@
               //Смотрим каждый json элемент
               $.each(data, function (key, data) {
                   console.log(data)
-                  var html = "<div class='seat' id=" + data.pos + "></div>"
-                  $(".squad").append(html);
-                  $('#'+data.pos).css('background-color', data.color).attr("taken", data.name);
+                  var html = '<div class="seat" id=' + data.pos + '></div>'
+                  $('.squad').append(html);
+                  $('#'+data.pos).css('background-color', data.color).attr('taken', data.name);
                   if(data.name === false){
                     $('#'+data.pos).text('');
                   }else{
@@ -63,32 +63,32 @@
                   }
               })
               //Настраиваем действия при наведении
-              $(".seat").hover(function(e){
-                  if(($(this).attr("taken") === "false") || ($(this).attr("taken") === username)){
+              $('.seat').hover(function(e){
+                  if(($(this).attr('taken') === 'false') || ($(this).attr('taken') === username)){
                     $(this).css('cursor','pointer');
                   }else{
                     $(this).css('cursor','default');
                   }
               });
               //Настраиваем действия при клике
-              $(".seat").click(function(e){
-                if(($(this).attr("taken") === "false") || ($(this).attr("taken") === username)){
+              $('.seat').click(function(e){
+                if(($(this).attr('taken') === 'false') || ($(this).attr('taken') === username)){
                   console.log(this.id);
                   socket.emit('reserve', { id: this.id });
                 }
               });
               //Логаут
-              $("#logout").click(function(e){
+              $('#logout').click(function(e){
                   socket.disconnect();
                   $('.content').css('display','none');
                   $('.squad').html('');
-                  $("#login").css('display','block');
+                  $('#login').css('display','block');
                   $('#login-modal').modal('show');
               });
             });
             
             socket.on('seat taken', function(data){
-              $('#'+data.pos).css('background-color', data.color).attr("taken",data.name);
+              $('#'+data.pos).css('background-color', data.color).attr('taken',data.name);
               if(data.name === false){
                 $('#'+data.pos).text('');
               }else{
@@ -107,7 +107,7 @@
           
         
         }).fail(function() {
-          alert("Неправильный пароль");
+          alert('Неправильный пароль');
         });        
   });
 });
