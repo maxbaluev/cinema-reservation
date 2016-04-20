@@ -1,5 +1,5 @@
 {
-  "name": "backend demo",
+  "name": "cinema-reservation",
   "version": "0.0.1",
   "engines":{
     "node":"4.4.0"
