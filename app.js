@@ -1,7 +1,9 @@
 
 var app = require('express')();
 var server = require('http').createServer(app);
-var io = require('socket.io')(server);
+
+var virtualDirPath = process.env.virtualDirPath || '';
+var io = require('socket.io')(server, { path: virtualDirPath + '/socket.io' });
 var bodyParser = require('body-parser');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt-nodejs');
@@ -29,7 +31,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-server.listen(80, function () {
+server.listen(process.env.PORT || 8080, function () {
   console.log('Подняли сервер на *:80');
 });
 
