@@ -135,7 +135,9 @@ io.on('connection', function (socket) {
         });  
         return;
       }else{
-        //место занято        
+        //место занято    
+        //TODO возможно кто-то пытается хакнуть апп
+            
       }
       
       if(user_seats == 5){
